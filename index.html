@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Normal™ — Experiência Totalmente Normal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page">
+    <header class="header">
+      <div>
+        <div class="tiny">SISTEMA DE CADASTRO:</div>
+        <h1>DEVS NIGHT</h1>
+        <p>Preencha o formulário abaixo para participar do encontro dev!</p>
+      </div>
+      <div class="status">Venha, <strong id="status">faça parte dessa desunião.</strong></div>
+    </header>
+
+    <div class="progress">
+      <span class="active">1. identidade</span>
+      <span>2. decisões</span>
+      <span>3. consequência</span>
+    </div>
+
+    <section class="card" id="step1">
+      <div class="label-weird">FORMULÁRIO Nº 7 DE 3</div>
+      <h2>Vamos começar pelo começo. Provavelmente.</h2>
+      <p class="instruction">
+        Digite suas informações pessoais. Nós precisamos delas para confirmar que você é você.
+        Caso você não seja você, por favor não prossiga sendo você.
+      </p>
+
+      <div class="field">
+        <label for="nome">Seu nome (não o nome que você gostaria de ter)</label>
+        <input id="nome" type="text" autocomplete="off" placeholder="Digite aqui, talvez">
+        <small id="nomeHint">Dica: letras são geralmente aceitas.</small>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail para receber o e-mail que confirma o e-mail</label>
+        <input id="email" type="text" autocomplete="off" placeholder="exemplo@alguma.coisa">
+        <small id="emailHint">Não use espaços. Ou use. A gente ainda está decidindo.</small>
+      </div>
+
+      <div class="field">
+        <label for="senha">Senha (precisa ser segura, mas não muito)</label>
+        <input id="senha" type="password" placeholder="Sua senha, que obviamente não vamos contar">
+        <small>Regra secreta: entre 6 e 12 caracteres. A regra só é secreta porque não avisamos antes.</small>
+      </div>
+
+      <div class="checkbox-zone">
+        <input type="checkbox" id="termos">
+        <label for="termos">Eu li os termos, não li os termos e concordo com a possibilidade de ambos.</label>
+      </div>
+
+      <div class="button-row">
+        <button class="btn cancel" id="cancel1">CANCELAR</button>
+        <button class="btn next" id="next1">AVANÇAR (provavelmente)</button>
+      </div>
+
+      <div id="message1" class="message"></div>
+    </section>
+
+    <section class="card hidden" id="step2">
+      <div class="label-weird">ETAPA 2 — AGORA PIOROU</div>
+      <h2>Escolha exatamente o que você não escolheria.</h2>
+      <p class="instruction">Uma das opções abaixo é necessária. Qual delas? Essa informação não está disponível neste momento.</p>
+
+      <div class="choice-grid">
+        <button class="choice" data-correct="false">Sim, desejo continuar</button>
+        <button class="choice" data-correct="true">Não, quero continuar</button>
+        <button class="choice" data-correct="false">Talvez, mas com confiança</button>
+        <button class="choice" data-correct="false">Não sei e acho isso suficiente</button>
+      </div>
+
+      <div class="field">
+        <label for="motivo">Explique por que você escolheu sua escolha</label>
+        <textarea id="motivo" placeholder="Escreva algo que pareça uma justificativa convincente..."></textarea>
+      </div>
+
+      <div class="fake-alert">
+        <strong>⚠ Mensagem importante:</strong>
+        <span>Você está indo muito bem. Isso é preocupante.</span>
+      </div>
+
+      <div class="button-row">
+        <button class="btn next" id="back2">VOLTAR PARA AVANÇAR</button>
+        <button class="btn cancel" id="next2">NÃO CLICAR AQUI</button>
+      </div>
+
+      <div id="message2" class="message"></div>
+    </section>
+
+    <section class="card hidden" id="step3">
+      <div class="label-weird">ÚLTIMA ETAPA — TALVEZ</div>
+      <h2>Confirmação da confirmação da confirmação.</h2>
+
+      <div class="summary">
+        <p><strong>Nome:</strong> <span id="showNome">???</span></p>
+        <p><strong>E-mail:</strong> <span id="showEmail">???</span></p>
+        <p><strong>Escolha:</strong> <span id="showChoice">uma escolha questionável</span></p>
+      </div>
+
+      <div class="field">
+        <label for="opinioes">Última pergunta completamente necessária</label>
+        <select id="opinioes">
+          <option value="">Selecione uma opção que não parece ter relação</option>
+          <option>Eu aceito que botões podem mentir</option>
+          <option>Eu nunca mais vou confiar em um botão verde</option>
+          <option>Por que eu ainda estou aqui?</option>
+        </select>
+      </div>
+
+      <div class="button-row final-buttons">
+        <button class="btn cancel" id="finalNo">NÃO FINALIZAR</button>
+        <button class="btn next" id="finalYes">FINALIZAR SEM FINALIZAR</button>
+      </div>
+
+      <div id="message3" class="message"></div>
+    </section>
+
+    <section class="success hidden" id="success">
+      <div class="success-symbol">✓</div>
+      <div class="label-weird">PARABÉNS???</div>
+      <h2>Você chegou ao final da pior experiência de usuário.</h2>
+      <p>
+        Se você conseguiu terminar, significa que a interface funcionou.
+        Se você se irritou, significa que ela funcionou ainda melhor.
+      </p>
+
+      <div class="analysis-box">
+        <h3>O que acabou de acontecer?</h3>
+        <ul>
+          <li>Botões com ações visuais e textuais inconsistentes.</li>
+          <li>Mensagens que confundem em vez de orientar.</li>
+          <li>Validações pouco intuitivas, mas ainda vencíveis.</li>
+          <li>Hierarquia visual propositalmente ruim.</li>
+          <li>Escolhas escritas de forma desnecessariamente confusa.</li>
+        </ul>
+      </div>
+
+      <p class="final-note">
+        <strong>Agora imagine isso em um sistema real.</strong><br>
+        O objetivo do desafio é perceber por que boas práticas de UI e UX existem.
+      </p>
+
+      <button class="btn restart" id="restart">VOLTAR E COMETER OS MESMOS ERROS</button>
+    </section>
+
+    <footer>
+      Projeto acadêmico — Desafio Prático: UI vs. UX & Engenharia do Erro
+    </footer>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
